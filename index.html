@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE REALITY | Asset Plus Agent</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Kanit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0a192f', /* Deep Midnight Navy */
+                            900: '#060f1e',
+                            950: '#020c1b',
+                        },
+                        gold: {
+                            100: '#F9F1D0',
+                            200: '#F0E68C',
+                            400: '#D4AF37', /* Classic Gold */
+                            500: '#C5A059',
+                            600: '#997B2F',
+                            700: '#755C1B',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', '"Cinzel"', 'serif'],
+                        sans: ['"Kanit"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+                        'navy-gradient': 'linear-gradient(to bottom, #0a192f, #112240)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a192f; }
+        ::-webkit-scrollbar-thumb { background: #997B2F; border-radius: 4px; }
+
+        /* Text Gradient for Gold Text */
+        .text-gold-gradient {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Gold Border Gradient */
+        .border-gold-gradient {
+            border: 1px solid transparent;
+            border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728) 1;
+        }
+
+        /* Button Hover Effect */
+        .btn-gold {
+            background: linear-gradient(135deg, #BF953F, #B38728);
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        .btn-gold:hover::before { left: 100%; }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(179, 135, 40, 0.3);
+        }
+
+        /* Fade In Animation Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Input Luxury Style */
+        .input-luxury {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #555;
+            color: white;
+            transition: all 0.3s;
+        }
+        .input-luxury:focus {
+            outline: none;
+            border-bottom: 1px solid #D4AF37;
+            box-shadow: 0 1px 0 0 #D4AF37;
+        }
+        .input-luxury::placeholder { color: #6e7890; font-weight: 300; }
+    </style>
+</head>
+<body class="bg-navy-900 font-sans text-gray-300 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-navy-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center flex-col md:flex-row cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-building text-gold-400 text-2xl mr-2"></i>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl md:text-2xl tracking-widest text-gold-gradient font-bold">THE REALITY</span>
+                        <span class="text-[0.6rem] md:text-xs tracking-[0.2em] text-gray-400 uppercase">Asset Plus Agent Co.,Ltd.</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Home</a>
+                    <a href="#story" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Story</a>
+                    <a href="#features" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Features</a>
+                    <a href="#register" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Register</a>
+                    <a href="#privilege" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Privilege</a>
+                    <a href="#gallery" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Gallery</a>
+                    <a href="#contact" class="text-xs uppercase tracking-widest hover:text-gold-400 transition-colors py-2">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden text-gold-400 text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600596542815-2495db969cf7?q=80&w=2575&auto=format&fit=crop" alt="Luxury Villa" class="w-full h-full object-cover">
+            <!-- Curtain Effect Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-navy-900/80 via-navy-900/40 to-navy-900"></div>
+            <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-navy-900 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-navy-900 via-navy-900/90 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 reveal active">
+            <div class="border border-gold-400/30 p-2 inline-block mb-6 rotate-45">
+                <div class="w-3 h-3 bg-gold-400 -rotate-45"></div>
+            </div>
+            <p class="text-gold-400 tracking-[0.4em] uppercase text-xs md:text-sm mb-4">Coming Soon</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-9xl text-white mb-4 tracking-wider leading-none">
+                <span class="text-gold-gradient drop-shadow-2xl">THE REALITY</span>
+            </h1>
+            <p class="font-serif text-lg md:text-2xl text-gray-200 italic mb-12 font-light tracking-wide">"Experience the Perfect Blend of Nature and Luxury"</p>
+            
+            <a href="#register" class="btn-gold px-12 py-4 rounded-sm text-sm uppercase tracking-[0.2em] font-bold shadow-2xl inline-block hover:scale-105 transform transition-transform">
+                Register Interest
+            </a>
+        </div>
+        
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce text-gold-400">
+            <div class="flex flex-col items-center gap-2">
+                <span class="text-[10px] tracking-[0.2em] uppercase writing-mode-vertical">Scroll</span>
+                <i class="fa-solid fa-chevron-down text-xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Story Section -->
+    <section id="story" class="py-24 bg-navy-900 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-gold-400/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-navy-800/50 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <!-- Image Side -->
+                <div class="relative reveal group">
+                    <div class="absolute top-6 -left-6 w-full h-full border border-gold-400/30 z-0 transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2653&auto=format&fit=crop" alt="Luxury Gate" class="relative z-10 w-full h-[500px] object-cover shadow-2xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-10 -right-10 z-20 bg-navy-800 p-6 shadow-xl border border-gold-400/20 hidden md:block">
+                         <p class="text-gold-400 text-4xl font-serif font-bold">200</p>
+                         <p class="text-gray-400 text-xs uppercase tracking-widest">Meters to Beach</p>
+                    </div>
+                </div>
+                
+                <!-- Text Side -->
+                <div class="text-center lg:text-left reveal">
+                    <h3 class="text-gold-400 uppercase tracking-[0.3em] text-xs mb-4 flex items-center justify-center lg:justify-start gap-4">
+                        <span class="w-8 h-px bg-gold-400"></span> Our Story
+                    </h3>
+                    <h2 class="font-serif text-4xl md:text-6xl text-white mb-8 leading-tight">
+                        Luxury Properties <br> <span class="text-gold-gradient italic">Pattaya</span>
+                    </h2>
+                    <p class="text-gray-400 leading-loose mb-6 font-light text-lg">
+                        สัมผัสสุนทรียภาพแห่งการพักผ่อนที่แท้จริง <strong>THE REALITY</strong> โครงการบ้านหรูระดับ Ultra-Luxury ที่ถูกรังสรรค์ขึ้นภายใต้แนวคิด "Timeless Elegance" ให้ทุกวันของคุณคือการพักผ่อนที่เหนือระดับ
+                    </p>
+                    <p class="text-gray-400 leading-loose mb-10 font-light">
+                        บริหารงานโดยทีมงานมืออาชีพจาก <strong>Asset Plus Agent</strong> ที่พร้อมดูแลและส่งมอบความเป็นเลิศในทุกรายละเอียด
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+                        <div>
+                            <p class="text-2xl text-white font-serif">24</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Units Only</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-serif">4</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Types</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl text-white font-serif">100%</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Privacy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Home Features (Layout from Ref) -->
+    <section id="features" class="py-24 bg-navy-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-3xl md:text-5xl text-white mb-4">HOME <span class="text-gold-gradient">FEATURES</span></h2>
+                <div class="w-24 h-px bg-gold-400 mx-auto opacity-50"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Large Feature Image (Left) -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?q=80&w=2574&auto=format&fit=crop" alt="Smart Home" class="w-full h-[600px] object-cover transform transition-transform duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-r from-navy-900/80 to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 max-w-md">
+                            <h3 class="text-2xl font-serif text-white mb-2">Modern Living</h3>
+                            <p class="text-gray-300 font-light text-sm">ยกระดับชีวิตด้วยเทคโนโลยีที่ทันสมัยและเป็นมิตรกับสิ่งแวดล้อม</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Grid (Right) -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-6 reveal">
+                    <!-- Item 1 -->
+                    <div class="bg-navy-800/50 p-6 border border-white/5 hover:border-gold-400/50 transition-all group text-center">
+                        <i class="fa-solid fa-water-ladder text-3xl text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-white text-sm uppercase tracking-wider">Private Pool</h4>
+                        <p class="text-xs text-gray-500 mt-2">ระบบเกลือทุกหลัง</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-navy-800/50 p-6 border border-white/5 hover:border-gold-400/50 transition-all group text-center">
+                        <i class="fa-solid fa-charging-station text-3xl text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-white text-sm uppercase tracking-wider">EV Charger</h4>
+                        <p class="text-xs text-gray-500 mt-2">รองรับรถยนต์ไฟฟ้า</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-navy-800/50 p-6 border border-white/5 hover:border-gold-400/50 transition-all group text-center">
+                        <i class="fa-solid fa-solar-panel text-3xl text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-white text-sm uppercase tracking-wider">Solar Cell</h4>
+                        <p class="text-xs text-gray-500 mt-2">ประหยัดพลังงาน</p>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="bg-navy-800/50 p-6 border border-white/5 hover:border-gold-400/50 transition-all group text-center">
+                        <i class="fa-solid fa-fingerprint text-3xl text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-white text-sm uppercase tracking-wider">Smart Lock</h4>
+                        <p class="text-xs text-gray-500 mt-2">ความปลอดภัยสูง</p>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="bg-navy-800/50 p-6 border border-white/5 hover:border-gold-400/50 transition-all group text-center">
+                        <i class="fa-solid fa-video text-3xl text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-white text-sm uppercase tracking-wider">CCTV System</h4>
+                        <p class="text-xs text-gray-500 mt-2">รอบตัวบ้าน</p>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="bg-navy-800/50 p-6 border border-white/5 hover:border-gold-400/50 transition-all group text-center">
+                        <i class="fa-solid fa-wifi text-3xl text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="text-white text-sm uppercase tracking-wider">Home Auto</h4>
+                        <p class="text-xs text-gray-500 mt-2">สั่งงานผ่านมือถือ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="py-24 relative bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1572331165267-854da2b00cc6?q=80&w=2670&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-navy-900/90 backdrop-blur-sm"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 reveal">
+            <!-- Split Layout for Register -->
+            <div class="bg-navy-800 shadow-2xl overflow-hidden flex flex-col md:flex-row border border-white/5">
+                <!-- Image Side (Register) -->
+                <div class="md:w-5/12 relative min-h-[300px] md:min-h-full">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2670&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Pool Villa">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent opacity-80"></div>
+                    <div class="absolute bottom-8 left-8 right-8">
+                        <h3 class="text-gold-400 font-serif text-2xl mb-2">Private Viewing</h3>
+                        <p class="text-white text-sm font-light opacity-80">นัดหมายเข้าชมโครงการแบบส่วนตัว เพื่อความปลอดภัยและความเป็นส่วนตัวสูงสุดของคุณ</p>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="md:w-7/12 p-10 md:p-16">
+                    <div class="text-left mb-10">
+                        <h2 class="font-serif text-3xl text-white mb-2">REGISTER <span class="text-gold-gradient">NOW</span></h2>
+                        <p class="text-gray-400 font-light text-sm">กรุณากรอกข้อมูลเพื่อให้เจ้าหน้าที่ติดต่อกลับ</p>
+                    </div>
+
+                    <form class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative">
+                                <input type="text" id="firstname" class="input-luxury w-full py-2 text-base bg-transparent" placeholder=" " required>
+                                <label for="firstname" class="absolute top-0 left-0 text-gray-500 text-xs transition-all duration-300 -mt-5 uppercase tracking-wider">First Name</label>
+                            </div>
+                            <div class="relative">
+                                <input type="text" id="lastname" class="input-luxury w-full py-2 text-base bg-transparent" placeholder=" " required>
+                                <label for="lastname" class="absolute top-0 left-0 text-gray-500 text-xs transition-all duration-300 -mt-5 uppercase tracking-wider">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative">
+                                <input type="tel" id="phone" class="input-luxury w-full py-2 text-base bg-transparent" placeholder=" " required>
+                                <label for="phone" class="absolute top-0 left-0 text-gray-500 text-xs transition-all duration-300 -mt-5 uppercase tracking-wider">Phone</label>
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="email" class="input-luxury w-full py-2 text-base bg-transparent" placeholder=" " required>
+                                <label for="email" class="absolute top-0 left-0 text-gray-500 text-xs transition-all duration-300 -mt-5 uppercase tracking-wider">Email</label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start pt-4">
+                            <input type="checkbox" class="mt-1 mr-3 accent-gold-400 w-4 h-4">
+                            <p class="text-[10px] text-gray-500 font-light leading-tight">
+                                ข้าพเจ้ายินยอมให้บริษัทเก็บรวบรวมข้อมูลส่วนบุคคลเพื่อใช้ในการติดต่อประสานงานและส่งข้อมูลข่าวสาร
+                            </p>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" class="btn-gold w-full py-4 text-sm uppercase tracking-[0.2em] font-bold text-white hover:shadow-lg">
+                                Submit Registration
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Privilege Section -->
+    <section id="privilege" class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center mb-16">
+                <h3 class="text-gold-400 uppercase tracking-[0.3em] text-xs mb-3">Exclusive Offers</h3>
+                <h2 class="font-serif text-3xl md:text-5xl text-white">SPECIAL <span class="italic font-serif text-gold-gradient">PRIVILEGE</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Main Promo Cards -->
+                <div class="group relative overflow-hidden cursor-pointer h-80 md:h-96">
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?q=80&w=2536&auto=format&fit=crop" alt="Luxury Car" class="object-cover w-full h-full transform transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <div class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold px-3 py-1 tracking-widest">FREE</div>
+                    <div class="absolute bottom-6 left-6">
+                        <h4 class="text-white font-serif text-2xl mb-1 group-hover:text-gold-400 transition-colors">Limousine Service</h4>
+                        <p class="text-gray-400 text-xs font-light">บริการรถรับส่งสนามบิน</p>
+                    </div>
+                    <div class="absolute inset-0 border border-gold-400/0 group-hover:border-gold-400/100 transition-all duration-500 m-4"></div>
+                </div>
+
+                <div class="group relative overflow-hidden cursor-pointer h-80 md:h-96">
+                    <img src="https://images.unsplash.com/photo-1613243555988-441166d4d6fd?q=80&w=2670&auto=format&fit=crop" alt="Furniture" class="object-cover w-full h-full transform transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <div class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold px-3 py-1 tracking-widest">FREE</div>
+                    <div class="absolute bottom-6 left-6">
+                        <h4 class="text-white font-serif text-2xl mb-1 group-hover:text-gold-400 transition-colors">Fully Furnished</h4>
+                        <p class="text-gray-400 text-xs font-light">เฟอร์นิเจอร์แบรนด์หรูครบชุด</p>
+                    </div>
+                    <div class="absolute inset-0 border border-gold-400/0 group-hover:border-gold-400/100 transition-all duration-500 m-4"></div>
+                </div>
+
+                <div class="group relative overflow-hidden cursor-pointer h-80 md:h-96">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2670&auto=format&fit=crop" alt="Spa" class="object-cover w-full h-full transform transition-transform duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    <div class="absolute top-4 left-4 bg-gold-500 text-navy-900 text-[10px] font-bold px-3 py-1 tracking-widest">FREE</div>
+                    <div class="absolute bottom-6 left-6">
+                        <h4 class="text-white font-serif text-2xl mb-1 group-hover:text-gold-400 transition-colors">Exclusive Spa</h4>
+                        <p class="text-gray-400 text-xs font-light">สมาชิกสปา 1 ปีเต็ม</p>
+                    </div>
+                    <div class="absolute inset-0 border border-gold-400/0 group-hover:border-gold-400/100 transition-all duration-500 m-4"></div>
+                </div>
+            </div>
+
+            <!-- Small Grid (Ref Inspired) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                 <div class="bg-navy-800 p-4 border border-white/5 flex items-center gap-4 hover:bg-navy-800/80 transition-colors">
+                     <div class="w-10 h-10 bg-gold-400/10 flex items-center justify-center rounded-full text-gold-400"><i class="fa-solid fa-wine-glass"></i></div>
+                     <span class="text-sm text-gray-300">Welcome Drink</span>
+                 </div>
+                 <div class="bg-navy-800 p-4 border border-white/5 flex items-center gap-4 hover:bg-navy-800/80 transition-colors">
+                     <div class="w-10 h-10 bg-gold-400/10 flex items-center justify-center rounded-full text-gold-400"><i class="fa-solid fa-utensils"></i></div>
+                     <span class="text-sm text-gray-300">Dining Voucher</span>
+                 </div>
+                 <div class="bg-navy-800 p-4 border border-white/5 flex items-center gap-4 hover:bg-navy-800/80 transition-colors">
+                     <div class="w-10 h-10 bg-gold-400/10 flex items-center justify-center rounded-full text-gold-400"><i class="fa-solid fa-golf-ball-tee"></i></div>
+                     <span class="text-sm text-gray-300">Golf Course</span>
+                 </div>
+                 <div class="bg-navy-800 p-4 border border-white/5 flex items-center gap-4 hover:bg-navy-800/80 transition-colors">
+                     <div class="w-10 h-10 bg-gold-400/10 flex items-center justify-center rounded-full text-gold-400"><i class="fa-solid fa-anchor"></i></div>
+                     <span class="text-sm text-gray-300">Yacht Trip</span>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: House Plan / Types -->
+    <section id="plans" class="py-24 bg-navy-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-3xl md:text-4xl text-white">MASTER <span class="text-gold-gradient">PLAN</span></h2>
+                <p class="text-gray-500 font-light mt-4">เลือกรูปแบบชีวิตที่ใช่สำหรับคุณ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 reveal">
+                <!-- Plan A -->
+                <div class="border border-white/10 bg-navy-900 p-8 hover:border-gold-400/50 transition-all duration-500 relative group">
+                    <div class="absolute top-0 right-0 bg-gold-600 text-white text-xs px-3 py-1 uppercase tracking-wider">Best Seller</div>
+                    <h3 class="text-gold-400 font-serif text-3xl mb-2">Type A</h3>
+                    <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">The Legacy Collection</p>
+                    
+                    <div class="space-y-4 text-gray-300 font-light border-t border-b border-white/5 py-6 mb-6">
+                        <div class="flex justify-between">
+                            <span>Usable Area</span>
+                            <span>450 sq.m.</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Land Size</span>
+                            <span>100 - 120 sq.w.</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Bedrooms</span>
+                            <span>4 Bedrooms</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Bathrooms</span>
+                            <span>5 Bathrooms</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Parking</span>
+                            <span>3 Cars</span>
+                        </div>
+                    </div>
+                    <button class="w-full border border-gold-400 text-gold-400 py-3 hover:bg-gold-400 hover:text-white transition-all uppercase text-xs tracking-widest">View Floor Plan</button>
+                </div>
+
+                <!-- Plan B -->
+                <div class="border border-white/10 bg-navy-900 p-8 hover:border-gold-400/50 transition-all duration-500 group">
+                    <h3 class="text-gold-400 font-serif text-3xl mb-2">Type B</h3>
+                    <p class="text-gray-400 text-sm uppercase tracking-widest mb-6">The Pride Collection</p>
+                    
+                    <div class="space-y-4 text-gray-300 font-light border-t border-b border-white/5 py-6 mb-6">
+                        <div class="flex justify-between">
+                            <span>Usable Area</span>
+                            <span>620 sq.m.</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Land Size</span>
+                            <span>140 - 180 sq.w.</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Bedrooms</span>
+                            <span>5 Bedrooms</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Bathrooms</span>
+                            <span>6 Bathrooms</span>
+                        </div>
+                         <div class="flex justify-between">
+                            <span>Parking</span>
+                            <span>4 Cars</span>
+                        </div>
+                    </div>
+                    <button class="w-full border border-gold-400 text-gold-400 py-3 hover:bg-gold-400 hover:text-white transition-all uppercase text-xs tracking-widest">View Floor Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Gallery -->
+    <section id="gallery" class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="font-serif text-3xl md:text-5xl text-white mb-2">PROJECT <span class="text-gold-gradient">GALLERY</span></h2>
+                    <p class="text-gray-500 font-light">บรรยากาศจริงจากโครงการ</p>
+                </div>
+                <a href="#" class="text-gold-400 text-sm hover:text-white transition-colors mt-4 md:mt-0">View All Photos <i class="fa-solid fa-arrow-right ml-2"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px]">
+                <!-- Item 1 Large -->
+                <div class="md:col-span-2 md:row-span-2 relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Gallery 1">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all"></div>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Gallery 2">
+                </div>
+                <!-- Item 3 -->
+                <div class="relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Gallery 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights (Icons) -->
+    <section class="py-20 bg-navy-950 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 reveal">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full border border-gold-400/30 flex items-center justify-center mb-6 group-hover:border-gold-400 group-hover:bg-gold-400/10 transition-all duration-500">
+                        <i class="fa-solid fa-location-dot text-2xl text-gold-gradient"></i>
+                    </div>
+                    <h4 class="text-white uppercase tracking-wider text-sm mb-2">Prime Location</h4>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-center group">
+                     <div class="w-16 h-16 rounded-full border border-gold-400/30 flex items-center justify-center mb-6 group-hover:border-gold-400 group-hover:bg-gold-400/10 transition-all duration-500">
+                        <i class="fa-solid fa-shield-halved text-2xl text-gold-gradient"></i>
+                    </div>
+                    <h4 class="text-white uppercase tracking-wider text-sm mb-2">High Security</h4>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-center group">
+                     <div class="w-16 h-16 rounded-full border border-gold-400/30 flex items-center justify-center mb-6 group-hover:border-gold-400 group-hover:bg-gold-400/10 transition-all duration-500">
+                        <i class="fa-solid fa-house-signal text-2xl text-gold-gradient"></i>
+                    </div>
+                    <h4 class="text-white uppercase tracking-wider text-sm mb-2">Smart Home</h4>
+                </div>
+                <!-- Feature 4 -->
+                <div class="flex flex-col items-center group">
+                     <div class="w-16 h-16 rounded-full border border-gold-400/30 flex items-center justify-center mb-6 group-hover:border-gold-400 group-hover:bg-gold-400/10 transition-all duration-500">
+                        <i class="fa-solid fa-leaf text-2xl text-gold-gradient"></i>
+                    </div>
+                    <h4 class="text-white uppercase tracking-wider text-sm mb-2">Green Space</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black py-16 border-t-2 border-gold-600 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+                <!-- Column 1: Logo -->
+                <div class="md:col-span-1">
+                     <div class="flex items-center justify-center md:justify-start mb-6">
+                        <i class="fa-solid fa-building text-gold-400 text-3xl mr-3"></i>
+                        <div class="flex flex-col text-left">
+                            <span class="font-serif text-xl text-white font-bold">THE REALITY</span>
+                            <span class="text-[0.6rem] tracking-widest text-gray-400 uppercase">Asset Plus Agent Co.,Ltd.</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed mb-6">
+                        The Reality of Luxury Living. <br>
+                        ที่สุดแห่งการอยู่อาศัยใจกลางพัทยา
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-line text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Links -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest mb-6 font-serif text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-xs font-light">
+                        <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                        <li><a href="#story" class="hover:text-gold-400 transition-colors">Project Story</a></li>
+                        <li><a href="#features" class="hover:text-gold-400 transition-colors">Facilities</a></li>
+                        <li><a href="#gallery" class="hover:text-gold-400 transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest mb-6 font-serif text-sm">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400 text-xs font-light">
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-phone text-gold-400 w-4 mr-2"></i> 
+                            <span>02-123-4567</span>
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-envelope text-gold-400 w-4 mr-2"></i> 
+                            <span>sales@assetplus.com</span>
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-map-pin text-gold-400 w-4 mr-2"></i> 
+                            <span>Pattaya, Thailand</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Map -->
+                <div class="w-full h-40 bg-navy-800 rounded-sm overflow-hidden relative border border-white/10">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124424.80596817257!2d100.86217484190973!3d12.951632281949012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102959244ba8899%3A0x37e33b843b32375d!2sPattaya%20City%2C%20Bang%20Lamung%20District%2C%20Chon%20Buri!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%); opacity: 0.6;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-gray-600 text-[10px] uppercase tracking-wider">&copy; 2025 Asset Plus Agent Co.,Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Navbar Change on Scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-navy-900', 'shadow-lg');
+                navbar.classList.remove('bg-navy-900/90', 'border-white/5');
+                navbar.classList.add('border-navy-800');
+            } else {
+                navbar.classList.remove('bg-navy-900', 'shadow-lg', 'border-navy-800');
+                navbar.classList.add('bg-navy-900/90', 'border-white/5');
+            }
+        });
+
+        // Reveal Elements on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Init call
+    </script>
+</body>
+</html>
