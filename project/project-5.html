@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setthasiri Bangna KM.10 | THE REALITY</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Kanit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0a192f',
+                            900: '#060f1e',
+                            950: '#020c1b',
+                        },
+                        gold: {
+                            100: '#F9F1D0',
+                            200: '#F0E68C',
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#997B2F',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', '"Cinzel"', 'serif'],
+                        sans: ['"Kanit"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a192f; }
+        ::-webkit-scrollbar-thumb { background: #997B2F; border-radius: 4px; }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, #BF953F, #B38728);
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(179, 135, 40, 0.3);
+        }
+
+        .input-luxury {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #555;
+            color: white;
+            transition: all 0.3s;
+        }
+        .input-luxury:focus {
+            outline: none;
+            border-bottom: 1px solid #D4AF37;
+            box-shadow: 0 1px 0 0 #D4AF37;
+        }
+        .input-luxury::placeholder { color: #6e7890; font-weight: 300; }
+        
+        /* Custom marker for luxury list */
+        ul.luxury-list li::marker {
+            content: "✦ ";
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-navy-900 font-sans text-gray-300 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-navy-900 border-b border-gold-400/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-28 md:h-32">
+                <!-- Logo (Bigger) -->
+                <div class="flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="c6c0ab1a-4c8d-4e19-9d69-ff5815179e68-removebg-preview.png" alt="THE REALITY Logo" class="h-24 md:h-32 w-auto object-contain">
+                </div>
+                
+                <!-- Desktop Menu (Gold Text) -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Home</a>
+                    <a href="#story" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Story</a>
+                    <a href="/gallary.html" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Projects</a>
+                    <a href="#features" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Features</a>
+                    <a href="#register" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Register</a>
+                    <a href="#privilege" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Privilege</a>
+                    <a href="#gallery" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Gallery</a>
+                    <a href="#contact" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (Gold) -->
+                <div class="md:hidden text-cyan-300 text-2xl hover:text-cyan-200 transition-colors cursor-pointer drop-shadow-[0_0_5px_rgba(34,211,238,0.5)]">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header / Breadcrumb -->
+    <div class="pt-48 pb-8 bg-navy-950 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center text-xs text-gray-500 uppercase tracking-widest space-x-2">
+                <a href="luxury_website.html" class="hover:text-gold-400">Home</a>
+                <span class="text-gold-600">/</span>
+                <a href="#" class="hover:text-gold-400">Bangkok</a>
+                <span class="text-gold-600">/</span>
+                <span class="text-white">Bangna KM.10</span>
+            </div>
+            <h1 class="font-serif text-2xl md:text-4xl text-white mt-4">Setthasiri <span class="text-gold-gradient italic">Bangna KM.10</span></h1>
+            <div class="flex flex-col md:flex-row gap-2 mt-2 items-start md:items-center">
+                <p class="text-gold-400 font-serif text-xl">Sale 29.9 MB</p>
+                <span class="text-gray-600 hidden md:inline">|</span>
+                <p class="text-cyan-400 font-serif text-xl">Rent 190,000 / Month</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Left Column: Details (2/3) -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Main Gallery Image -->
+                <div class="relative w-full h-[400px] md:h-[550px] bg-navy-800 rounded-sm overflow-hidden group border border-white/10 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2671&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 lightbox-image" alt="Setthasiri Exterior">
+                    <div class="absolute top-4 left-4 bg-gold-600 text-white text-xs px-4 py-2 uppercase tracking-widest">Rare Unit</div>
+                    <div class="absolute top-4 right-4 bg-cyan-600 text-white text-xs px-4 py-2 uppercase tracking-widest">Brand New</div>
+                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white text-xs px-4 py-2 border border-white/20">Type: LAWRENCE</div>
+                </div>
+
+                <!-- Thumbnail Grid -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-100 border-2 border-gold-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2653&auto=format&fit=crop" class="w-full h-full object-cover lightbox-image">
+                    </div>
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-60 hover:opacity-100 transition-opacity overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753197-87ef3a9240e2?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover lightbox-image">
+                    </div>
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-60 hover:opacity-100 transition-opacity overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop" class="w-full h-full object-cover lightbox-image">
+                    </div>
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-60 hover:opacity-100 transition-opacity relative overflow-hidden view-all-trigger">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2574&auto=format&fit=crop" class="w-full h-full object-cover lightbox-image">
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-sm font-light">See all 26 photos</div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats Bar -->
+                <div class="bg-navy-800 border-y border-gold-400/30 py-6 px-4 flex flex-wrap justify-between items-center text-center gap-4">
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-ruler-combined text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">247 Sq.m.</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-expand text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">59.3 Sq.w.</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-bed text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">4 Beds</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-bath text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">4 Baths</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-car text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">3 Cars</p>
+                    </div>
+                </div>
+
+                <!-- Description Tabs (Thai / Eng / Chinese) -->
+                <div>
+                    <div class="flex border-b border-white/10 mb-6">
+                        <button class="tab-btn px-6 py-2 text-gold-400 border-b-2 border-gold-400 font-serif tracking-widest text-sm" data-lang="th">
+                            Thai
+                        </button>
+                        <button class="tab-btn px-6 py-2 text-gray-500 hover:text-gold-400 font-serif tracking-widest text-sm transition-colors" data-lang="en">
+                            English
+                        </button>
+                        <button class="tab-btn px-6 py-2 text-gray-500 hover:text-gold-400 font-serif tracking-widest text-sm transition-colors" data-lang="cn">
+                            Chinese
+                        </button>
+                    </div>
+
+                    <div class="text-gray-400 leading-loose space-y-6 font-light text-sm md:text-base">
+                        <!-- TH -->
+                        <div class="tab-pane" data-lang="th">
+                            <h3 class="font-serif text-2xl text-white mb-4">รายละเอียดทรัพย์ (Thai)</h3>
+                            <p>
+                                <strong>ขายและให้เช่า บ้านเดี่ยวหรูใกล้เมกะบางนา</strong> โครงการเศรษฐสิริ บางนา กม.10 (Setthasiri Bangna KM.10) โดย Sansiri บ้านใหม่ 2 ชั้น พร้อมเข้าอยู่ทันที บนทำเลทองบางนา-ตราด
+                            </p>
+                            <p>
+                                <strong>Rare Unit!</strong> ทำเลดีที่สุด ใกล้คลับเฮ้าส์ ในซอยมีเพียง 4 หลังเท่านั้น ให้ความเป็นส่วนตัวสูงสุด ตกแต่งครบทุกมุมด้วยวัสดุระดับพรีเมียม (Fully Furnished) หิ้วกระเป๋าเข้าอยู่ได้เลย
+                            </p>
+                            <div class="bg-navy-800 p-6 rounded-sm border border-white/5 mt-4">
+                                <h4 class="text-gold-400 mb-2 font-serif">แบบบ้าน LAWRENCE (ลอเรนซ์)</h4>
+                                <ul class="luxury-list space-y-2 pl-4">
+                                    <li>ที่ดิน 59.30 ตร.ว. | พื้นที่ใช้สอย 247 ตร.ม.</li>
+                                    <li>4 ห้องนอน 4 ห้องน้ำ</li>
+                                    <li>1 ห้องรับแขก 1 ส่วนรับประทานอาหาร 1 ห้องครัว</li>
+                                    <li>1 ห้องแม่บ้าน (แยกส่วน)</li>
+                                    <li>ที่จอดรถ 3 คัน</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- EN -->
+                        <div class="tab-pane hidden pt-8 border-t border-white/10" data-lang="en">
+                            <h3 class="font-serif text-xl text-white mb-4 opacity-80">English Description</h3>
+                            <p>
+                                <strong>Setthasiri Bangna KM.10 | Sansiri Project</strong><br>
+                                Brand-new 2-storey detached house – Ready to move in. Fully furnished with high-end materials and elegant design. Rare Unit near the Clubhouse – Only 4 houses in the lane!
+                            </p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li><strong>Type:</strong> LAWRENCE</li>
+                                <li><strong>Land:</strong> 59.30 sq.wah | <strong>Usage:</strong> 247 sq.m.</li>
+                                <li>4 Bedrooms, 4 Bathrooms, Maid's Room, 3 Parking Spaces.</li>
+                                <li><strong>Facilities:</strong> Saltwater Pool, Fitness, Sansiri Backyard, 24hr Security.</li>
+                                <li><strong>Location:</strong> Near Mega Bangna, 10 mins to Suvarnabhumi Airport.</li>
+                            </ul>
+                        </div>
+
+                        <!-- CN -->
+                        <div class="tab-pane hidden pt-8 border-t border-white/10" data-lang="cn">
+                            <h3 class="font-serif text-xl text-white mb-4 opacity-80">Chinese Description (中文)</h3>
+                            <p>
+                                <strong>Setthasiri Bangna KM.10 | 曼谷 Sansiri 高端社区</strong><br>
+                                全新双层独栋别墅 拎包入住。全屋精装，品质高端。稀缺房源！紧邻会所，仅 4 套房！
+                            </p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li><strong>户型:</strong> LAWRENCE</li>
+                                <li><strong>面积:</strong> 占地 59.30 平方佤 (约 237 平米) | 建筑 247 平米</li>
+                                <li>4 卧室, 4 浴室, 保姆房, 3 停车位</li>
+                                <li><strong>配套:</strong> 盐水泳池, 健身中心, 24 小时安保</li>
+                                <li><strong>位置:</strong> 临近 Mega Bangna, 10 分钟直达素万那普机场</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facilities & Location -->
+                <div>
+                    <h3 class="font-serif text-2xl text-white mb-6 border-l-4 border-gold-400 pl-4">Facilities & Nearby</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300 font-light">
+                        <div>
+                            <h4 class="text-gold-400 font-serif mb-2">Facilities (สิ่งอำนวยความสะดวก)</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><i class="fa-solid fa-water text-cyan-400 mr-2"></i> สระว่ายน้ำระบบเกลือ (Saltwater Pool)</li>
+                                <li><i class="fa-solid fa-dumbbell text-cyan-400 mr-2"></i> ฟิตเนสครบครัน (Fitness Center)</li>
+                                <li><i class="fa-solid fa-tree text-cyan-400 mr-2"></i> Sansiri Backyard & สวนขนาดใหญ่</li>
+                                <li><i class="fa-solid fa-shield-halved text-cyan-400 mr-2"></i> ระบบรักษาความปลอดภัย 24 ชม.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gold-400 font-serif mb-2">Nearby (สถานที่ใกล้เคียง)</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><i class="fa-solid fa-bag-shopping text-gold-400 mr-2"></i> Mega Bangna / Central Village</li>
+                                <li><i class="fa-solid fa-graduation-cap text-gold-400 mr-2"></i> Verso / Berkeley Int. School</li>
+                                <li><i class="fa-solid fa-hospital text-gold-400 mr-2"></i> Samitivej / Princ Suvarnabhumi</li>
+                                <li><i class="fa-solid fa-plane text-gold-400 mr-2"></i> Suvarnabhumi Airport (10 mins)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Location -->
+                <div>
+                     <h3 class="font-serif text-2xl text-white mb-6 border-l-4 border-gold-400 pl-4">Location Map</h3>
+                     <div class="w-full h-64 bg-navy-800 rounded-sm overflow-hidden border border-white/10">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.929427879376!2d100.6985623148303!3d13.63537399037712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5f0036666667%3A0x123456789abcdef!2sSetthasiri%20Bangna%20KM.10!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%); opacity: 0.6;" allowfullscreen="" loading="lazy"></iframe>
+                     </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Sticky Contact Form (1/3) -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-36 bg-navy-950 border border-gold-400/30 p-8 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gold-400/10 rounded-bl-full"></div>
+                    
+                    <div class="text-center mb-6">
+                        <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">For Sale</p>
+                        <h4 class="font-serif text-3xl text-white">29.9 MB</h4>
+                        <div class="w-full h-px bg-white/10 my-4"></div>
+                        <p class="text-gray-400 text-xs uppercase tracking-widest mb-1">For Rent</p>
+                        <h4 class="font-serif text-2xl text-cyan-400">190,000 / Mo.</h4>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center text-gray-300">
+                            <div class="w-12 h-12 rounded-full bg-navy-800 border border-gold-400 flex items-center justify-center mr-3 text-gold-400">
+                                <i class="fa-solid fa-user-tie text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gold-400 uppercase">Exclusive Agent</p>
+                                <p class="text-lg font-serif">คุณนิน (K.Nin)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-solid fa-phone text-gold-400 w-8 text-center mr-2"></i>
+                            <span>064-695-9417, 082-485-5002</span>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-brands fa-line text-gold-400 w-8 text-center mr-2"></i>
+                            <span>Line: chanuthslee</span>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-brands fa-tiktok text-gold-400 w-8 text-center mr-2"></i>
+                            <span>NinniraRealAsset</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://line.me/ti/p/~chanuthslee" target="_blank" class="btn-gold w-full py-3 text-sm font-bold uppercase tracking-widest text-white block text-center mb-3">
+                        <i class="fa-brands fa-line mr-2"></i> Book Viewing
+                    </a>
+                    <a href="#" class="border border-white/20 hover:border-white w-full py-3 text-sm font-bold uppercase tracking-widest text-white block text-center transition-colors">
+                        <i class="fa-solid fa-phone mr-2"></i> Call Now
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- NEW SECTION: Full Project Gallery (26 Photos Grid) -->
+    <section class="py-16 bg-navy-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8">
+                <h3 class="font-serif text-2xl text-white border-l-4 border-gold-400 pl-4">Gallery (26 Photos)</h3>
+                <p class="text-gray-500 text-xs mt-2 md:mt-0 italic">Brand-new Condition</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[150px]">
+                
+                <!-- 1. Living (Wide) -->
+                <div class="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2574&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Living Room">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                </div>
+
+                <!-- 2. Dining -->
+                <div class="col-span-1 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfe1?q=80&w=2574&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Dining">
+                </div>
+                
+                <!-- 3. Kitchen -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1556912172-45b7abe8ce8e?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Kitchen">
+                </div>
+
+                <!-- 4. Facade -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1600596542815-2495db969cf7?q=80&w=2575&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Facade">
+                </div>
+
+                <!-- 5. Master Bed (Wide) -->
+                <div class="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Master Bed">
+                </div>
+                
+                <!-- 6. Master Bath -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Master Bath">
+                </div>
+
+                <!-- 7. Walk-in Closet -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1551516594-6fc20d845085?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Closet">
+                </div>
+
+                <!-- 8. Bedroom 2 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1616594039964-408359566ea3?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Bed 2">
+                </div>
+
+                <!-- 9. Bedroom 3 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Bed 3">
+                </div>
+
+                <!-- 10. Bedroom 4 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Bed 4">
+                </div>
+
+                <!-- 11. Bathroom 2 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1552321988-5c064664d1f5?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Bath 2">
+                </div>
+                
+                 <!-- 12. Bathroom 3 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1620626012053-1c167f7ebac2?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Bath 3">
+                </div>
+
+                 <!-- 13. Bathroom 4 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Bath 4">
+                </div>
+
+                <!-- 14. Maid Room -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?q=80&w=2564&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Maid">
+                </div>
+
+                <!-- 15. Stairs -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2669&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Stairs">
+                </div>
+
+                <!-- 16. Garden/Backyard -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1558036117-15db5275252b?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Garden">
+                </div>
+
+                <!-- 17. Pool (Common) -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Pool">
+                </div>
+
+                <!-- 18. Fitness (Common) -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Fitness">
+                </div>
+
+                <!-- 19. Clubhouse -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lightbox-image" alt="Clubhouse">
+                </div>
+
+                <!-- 20. More (+View All) -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer bg-navy-800 flex items-center justify-center border border-white/10 hover:border-gold-400 view-all-trigger">
+                    <div class="text-center">
+                        <i class="fa-solid fa-images text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-xs uppercase tracking-widest">View All 26</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightboxOverlay" class="fixed inset-0 bg-black/80 hidden z-[60] items-center justify-center p-4">
+        <button id="lightboxClose" class="absolute top-4 right-4 text-white text-3xl md:text-4xl font-light hover:text-gold-400">
+            &times;
+        </button>
+        <button id="lightboxPrev" class="absolute left-4 md:left-8 text-white text-3xl md:text-4xl font-light hover:text-gold-400">
+            &#10094;
+        </button>
+        <img id="lightboxImage" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm border border-white/20 shadow-2xl" alt="Preview">
+        <button id="lightboxNext" class="absolute right-4 md:right-8 text-white text-3xl md:text-4xl font-light hover:text-gold-400">
+            &#10095;
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black py-16 border-t-2 border-gold-600 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+                <!-- Column 1: Logo -->
+                <div class="md:col-span-1">
+                <div class="flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="c6c0ab1a-4c8d-4e19-9d69-ff5815179e68-removebg-preview.png" alt="THE REALITY Logo" class="h-14 md:h-16 w-auto object-contain">
+                                        <div class="flex flex-col">
+                        <span class="font-serif text-xl md:text-2xl tracking-widest text-gold-gradient font-normal">THE REALITY</span>
+                        <span class="text-[0.6rem] md:text-xs tracking-[0.2em] text-white uppercase">Asset Plus Agent Co.,Ltd.</span>
+                    </div>
+                </div>
+                    <!-- <p class="text-gray-500 text-xs font-light leading-relaxed mb-6">
+                        The Reality of Luxury Living. <br>
+                        ที่สุดแห่งการอยู่อาศัยใจกลางพัทยา
+                    </p> -->
+                    <br>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-line text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Links -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest mb-6 font-serif text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-xs font-light">
+                        <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                        <li><a href="#story" class="hover:text-gold-400 transition-colors">Project Story</a></li>
+                        <li><a href="#features" class="hover:text-gold-400 transition-colors">Facilities</a></li>
+                        <li><a href="#gallery" class="hover:text-gold-400 transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest mb-6 font-serif text-sm">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400 text-xs font-light">
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-phone text-gold-400 w-4 mr-2"></i> 
+                            <span>02-123-4567</span>
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-envelope text-gold-400 w-4 mr-2"></i> 
+                            <span>sales@assetplus.com</span>
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-map-pin text-gold-400 w-4 mr-2"></i> 
+                            <span>Pattaya, Thailand</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Map -->
+                <div class="w-full h-40 bg-navy-800 rounded-sm overflow-hidden relative border border-white/10">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124424.80596817257!2d100.86217484190973!3d12.951632281949012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102959244ba8899%3A0x37e33b843b32375d!2sPattaya%20City%2C%20Bang%20Lamung%20District%2C%20Chon%20Buri!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%); opacity: 0.6;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-gray-600 text-[10px] uppercase tracking-wider">&copy; 2025 Asset Plus Agent Co.,Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab Script + Lightbox Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        /* ====== LANGUAGE TABS ====== */
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanes   = document.querySelectorAll('.tab-pane');
+
+        function activateTab(lang) {
+            tabButtons.forEach(btn => {
+                const isActive = btn.dataset.lang === lang;
+                if (isActive) {
+                    btn.classList.add('text-gold-400', 'border-b-2', 'border-gold-400');
+                    btn.classList.remove('text-gray-500');
+                } else {
+                    btn.classList.remove('text-gold-400', 'border-b-2', 'border-gold-400');
+                    btn.classList.add('text-gray-500');
+                }
+            });
+
+            tabPanes.forEach(pane => {
+                const isMatch = pane.dataset.lang === lang;
+                pane.classList.toggle('hidden', !isMatch);
+            });
+        }
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                activateTab(lang);
+            });
+        });
+
+        // default: TH
+        activateTab('th');
+
+        /* ====== LIGHTBOX GALLERY ====== */
+        const galleryImages = Array.from(document.querySelectorAll('.lightbox-image'));
+        const overlay   = document.getElementById('lightboxOverlay');
+        const overlayImg = document.getElementById('lightboxImage');
+        const btnClose  = document.getElementById('lightboxClose');
+        const btnPrev   = document.getElementById('lightboxPrev');
+        const btnNext   = document.getElementById('lightboxNext');
+        const viewAllTriggers = document.querySelectorAll('.view-all-trigger');
+        let currentIndex = 0;
+
+        if (galleryImages.length > 0) {
+            function openLightbox(index) {
+                if (index < 0 || index >= galleryImages.length) return;
+                currentIndex = index;
+                const img = galleryImages[currentIndex];
+                overlayImg.src = img.src;
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeLightbox() {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            function showNext(delta) {
+                let newIndex = currentIndex + delta;
+                if (newIndex < 0) newIndex = galleryImages.length - 1;
+                if (newIndex >= galleryImages.length) newIndex = 0;
+                openLightbox(newIndex);
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => openLightbox(index));
+            });
+
+            viewAllTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openLightbox(0);
+                });
+            });
+
+            btnClose.addEventListener('click', closeLightbox);
+            btnPrev.addEventListener('click', () => showNext(-1));
+            btnNext.addEventListener('click', () => showNext(1));
+
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (overlay.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showNext(-1);
+                if (e.key === 'ArrowRight') showNext(1);
+            });
+        }
+    });
+    </script>
+
+</body>
+</html>

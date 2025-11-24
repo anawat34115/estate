@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pongsirichai 4 Phetkasem 81 | THE REALITY</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Kanit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0a192f',
+                            900: '#060f1e',
+                            950: '#020c1b',
+                        },
+                        gold: {
+                            100: '#F9F1D0',
+                            200: '#F0E68C',
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#997B2F',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', '"Cinzel"', 'serif'],
+                        sans: ['"Kanit"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a192f; }
+        ::-webkit-scrollbar-thumb { background: #997B2F; border-radius: 4px; }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, #BF953F, #B38728);
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(179, 135, 40, 0.3);
+        }
+
+        .input-luxury {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #555;
+            color: white;
+            transition: all 0.3s;
+        }
+        .input-luxury:focus {
+            outline: none;
+            border-bottom: 1px solid #D4AF37;
+            box-shadow: 0 1px 0 0 #D4AF37;
+        }
+        .input-luxury::placeholder { color: #6e7890; font-weight: 300; }
+    </style>
+</head>
+<body class="bg-navy-900 font-sans text-gray-300 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-navy-900 border-b border-gold-400/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-28 md:h-32">
+                <!-- Logo (Bigger) -->
+                <div class="flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="/c6c0ab1a-4c8d-4e19-9d69-ff5815179e68-removebg-preview.png" alt="THE REALITY Logo" class="h-24 md:h-32 w-auto object-contain">
+                </div>
+                
+                <!-- Desktop Menu (Gold Text) -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Home</a>
+                    <a href="#story" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Story</a>
+                    <a href="/gallary.html" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Projects</a>
+                    <a href="#features" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Features</a>
+                    <a href="#register" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Register</a>
+                    <a href="#privilege" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Privilege</a>
+                    <a href="#gallery" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Gallery</a>
+                    <a href="#contact" class="text-xs uppercase tracking-widest text-gold-400 hover:text-gold-200 transition-colors py-2">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (Gold) -->
+                <div class="md:hidden text-cyan-300 text-2xl hover:text-cyan-200 transition-colors cursor-pointer drop-shadow-[0_0_5px_rgba(34,211,238,0.5)]">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header / Breadcrumb -->
+    <div class="pt-48 pb-8 bg-navy-950 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center text-xs text-gray-500 uppercase tracking-widest space-x-2">
+                <a href="luxury_website.html" class="hover:text-gold-400">Home</a>
+                <span class="text-gold-600">/</span>
+                <a href="#" class="hover:text-gold-400">Bangkok</a>
+                <span class="text-gold-600">/</span>
+                <span class="text-white">Nong Khaem</span>
+            </div>
+            <h1 class="font-serif text-2xl md:text-4xl text-white mt-4">Pongsirichai 4 <span class="text-gold-gradient italic">Phetkasem 81</span></h1>
+            <p class="text-gold-400 mt-2 font-serif text-xl">ราคา 2.XX ล้านบาท* (ผ่อนล้านละ 2,xxx)</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Left Column: Details (2/3) -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Main Gallery Image -->
+                <div class="relative w-full h-[400px] md:h-[500px] bg-navy-800 rounded-sm overflow-hidden group border border-white/10">
+                    <img 
+                        src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/548827782_1460618328688238_4236644866714103220_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tx168EAVPJEQ7kNvwFsFxzv&_nc_oc=Adl_wqy3c7i9INo_fwGyn5gN5HuQa3iNxYurFphqRJUyYX2J1itsvpv_5ijF12POVSkzB-fP1A8fTKFbJBcVojtY&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=4Xf7Vmfo2Pez6N40kIQSUg&oh=00_Afjc8bGW2UHjHdwdK5sXj0GzyhRysKM1pyJbZmjG02kC3g&oe=692A5DDD" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cursor-pointer" 
+                        alt="Pongsirichai Exterior"
+                        data-lightbox-src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/548827782_1460618328688238_4236644866714103220_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tx168EAVPJEQ7kNvwFsFxzv&_nc_oc=Adl_wqy3c7i9INo_fwGyn5gN5HuQa3iNxYurFphqRJUyYX2J1itsvpv_5ijF12POVSkzB-fP1A8fTKFbJBcVojtY&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=4Xf7Vmfo2Pez6N40kIQSUg&oh=00_Afjc8bGW2UHjHdwdK5sXj0GzyhRysKM1pyJbZmjG02kC3g&oe=692A5DDD"
+                    >
+                    <div class="absolute top-4 left-4 bg-gold-600 text-white text-xs px-4 py-2 uppercase tracking-widest">3 Storey</div>
+                    <div class="absolute top-4 right-4 bg-cyan-600 text-white text-xs px-4 py-2 uppercase tracking-widest">Renovated</div>
+                </div>
+
+                <!-- Thumbnail Grid (Simulated) -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-100 border-2 border-gold-400">
+                        <img 
+                            src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/548185089_1460618302021574_6386341287790060485_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=d1IuL_WcgzIQ7kNvwHgzIww&_nc_oc=Adnf8aY95RD63CQy5JH8--ET7oA_SuY3fYVcg1xLWEwZ4V0yXCV9dfoIBTUvhEEXXor35A5iDlrLb7eT6KyRFAR1&_nc_zt=23&_nc_ht=scontent.fbkk13-2.fna&_nc_gid=EQDduw4j_Jd1oRYfrRNU8A&oh=00_AfhBTzUCVK6V2daAWP0NYmhvrftxH3nxwVtRzMK7zi7i6g&oe=692A5619" 
+                            class="w-full h-full object-cover cursor-pointer"
+                            alt="Living Room"
+                            data-lightbox-src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/548185089_1460618302021574_6386341287790060485_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=d1IuL_WcgzIQ7kNvwHgzIww&_nc_oc=Adnf8aY95RD63CQy5JH8--ET7oA_SuY3fYVcg1xLWEwZ4V0yXCV9dfoIBTUvhEEXXor35A5iDlrLb7eT6KyRFAR1&_nc_zt=23&_nc_ht=scontent.fbkk13-2.fna&_nc_gid=EQDduw4j_Jd1oRYfrRNU8A&oh=00_AfhBTzUCVK6V2daAWP0NYmhvrftxH3nxwVtRzMK7zi7i6g&oe=692A5619"
+                        >
+                    </div>
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+                        <img 
+                            src="https://scontent.fbkk12-6.fna.fbcdn.net/v/t39.30808-6/548164995_1460618288688242_6245934913503672089_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHxHUK7NMrpiNwdxlXMY_VCIjOpC_BbkH4iM6kL8FuQfmXdt-azWlynOH8eZFeGthEKXAMcoLOhMvxMP75AUkNS&_nc_ohc=9tV9C-Gr0G8Q7kNvwEMaGMh&_nc_oc=Adlz8s1G5x9pDdigQfcGtLbFtkMbMRv0WWhywuADH7ysL473tPqWAmpI9LPNYnc4CdqDr0mlX7FdYzxi1YrrxH5B&_nc_zt=23&_nc_ht=scontent.fbkk12-6.fna&_nc_gid=mFTHX4sr_g2kfRVH9PIKNw&oh=00_Afg0XKA1xMkJDY7fAMolvkth0rWc_fIIrZa8ZHtY4sZo8g&oe=692A4CB2" 
+                            class="w-full h-full object-cover cursor-pointer"
+                            alt="Dining"
+                            data-lightbox-src="https://scontent.fbkk12-6.fna.fbcdn.net/v/t39.30808-6/548164995_1460618288688242_6245934913503672089_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHxHUK7NMrpiNwdxlXMY_VCIjOpC_BbkH4iM6kL8FuQfmXdt-azWlynOH8eZFeGthEKXAMcoLOhMvxMP75AUkNS&_nc_ohc=9tV9C-Gr0G8Q7kNvwEMaGMh&_nc_oc=Adlz8s1G5x9pDdigQfcGtLbFtkMbMRv0WWhywuADH7ysL473tPqWAmpI9LPNYnc4CdqDr0mlX7FdYzxi1YrrxH5B&_nc_zt=23&_nc_ht=scontent.fbkk12-6.fna&_nc_gid=mFTHX4sr_g2kfRVH9PIKNw&oh=00_Afg0XKA1xMkJDY7fAMolvkth0rWc_fIIrZa8ZHtY4sZo8g&oe=692A4CB2"
+                        >
+                    </div>
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+                        <img 
+                            src="https://scontent.fbkk13-3.fna.fbcdn.net/v/t39.30808-6/548399621_1460618698688201_3682783449912539680_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF5ALR5WGBIqUNFNvdcg9U4JDFEiPwLBTckMUSI_AsFNx1wjNHUB2C0hFXMzsPB2_cDMK9lGdAijwFDYONgxEbi&_nc_ohc=u4vkMgTuvtQQ7kNvwHx4BPb&_nc_oc=Adk5kxN94as2IromKRFAx_6HVKFrF-9-0RU9UopQrxZhgSe6ff3L2sw982KYrnN7d4GnTENwSNrG5QeSfBJNFojf&_nc_zt=23&_nc_ht=scontent.fbkk13-3.fna&_nc_gid=obvOqq0v0_fErewFTfoThA&oh=00_AfizIOy8i3YPu8RCoy_5klNYCg8N-FZlMY5qLzDKGWAFLA&oe=692A5D1F" 
+                            class="w-full h-full object-cover cursor-pointer"
+                            alt="Bathroom"
+                            data-lightbox-src="https://scontent.fbkk13-3.fna.fbcdn.net/v/t39.30808-6/548399621_1460618698688201_3682783449912539680_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF5ALR5WGBIqUNFNvdcg9U4JDFEiPwLBTckMUSI_AsFNx1wjNHUB2C0hFXMzsPB2_cDMK9lGdAijwFDYONgxEbi&_nc_ohc=u4vkMgTuvtQQ7kNvwHx4BPb&_nc_oc=Adk5kxN94as2IromKRFAx_6HVKFrF-9-0RU9UopQrxZhgSe6ff3L2sw982KYrnN7d4GnTENwSNrG5QeSfBJNFojf&_nc_zt=23&_nc_ht=scontent.fbkk13-3.fna&_nc_gid=obvOqq0v0_fErewFTfoThA&oh=00_AfizIOy8i3YPu8RCoy_5klNYCg8N-FZlMY5qLzDKGWAFLA&oe=692A5D1F"
+                        >
+                    </div>
+                    <div class="aspect-w-4 aspect-h-3 cursor-pointer opacity-60 hover:opacity-100 transition-opacity relative">
+                        <img 
+                            src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/548420073_1460618412021563_338336268485597972_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFzaW4VxhnyHrSV4smWiBtT5bSwucOptZPltLC5w6m1kxPqfcUlAarhrTnFLcXZKsoTz-pCuswPn7PYt2zet0m2&_nc_ohc=F4UdMdcnTsoQ7kNvwHDPPdF&_nc_oc=AdkrdBuQKQ7q5_u3ZoWH0JhpmW4Q0BSHSdfAz6aYZtk1dLzUpbjKJ3fB-nt-qyHd_JQVz8HSjaNpHC4AMLqlZGVD&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=kicxm4XSVGupSS2jCsxjBw&oh=00_AfhFzCSY14nfxYN7sxn1_osalZrRGk0_1t-omeNxVhamDQ&oe=692A3589" 
+                            class="w-full h-full object-cover cursor-pointer"
+                            alt="Bedroom Detail"
+                            data-lightbox-src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/548420073_1460618412021563_338336268485597972_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFzaW4VxhnyHrSV4smWiBtT5bSwucOptZPltLC5w6m1kxPqfcUlAarhrTnFLcXZKsoTz-pCuswPn7PYt2zet0m2&_nc_ohc=F4UdMdcnTsoQ7kNvwHDPPdF&_nc_oc=AdkrdBuQKQ7q5_u3ZoWH0JhpmW4Q0BSHSdfAz6aYZtk1dLzUpbjKJ3fB-nt-qyHd_JQVz8HSjaNpHC4AMLqlZGVD&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=kicxm4XSVGupSS2jCsxjBw&oh=00_AfhFzCSY14nfxYN7sxn1_osalZrRGk0_1t-omeNxVhamDQ&oe=692A3589"
+                        >
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-sm font-light pointer-events-none">See all 15 photos</div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats Bar -->
+                <div class="bg-navy-800 border-y border-gold-400/30 py-6 px-4 flex flex-wrap justify-between items-center text-center gap-4">
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-layer-group text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">3 Floors</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-bed text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">5 Beds</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-bath text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">3 Baths</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-ruler-combined text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">190 Sq.m.</p>
+                    </div>
+                    <div class="w-px h-10 bg-white/10 hidden md:block"></div>
+                    <div class="flex-1 min-w-[80px]">
+                        <i class="fa-solid fa-car text-gold-400 text-2xl mb-2"></i>
+                        <p class="text-white text-sm uppercase">1 Car</p>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h3 class="font-serif text-2xl text-white mb-6 border-l-4 border-gold-400 pl-4">Property Highlights</h3>
+                    <div class="text-gray-400 leading-loose space-y-4 font-light text-sm md:text-base">
+                        <p>
+                            <strong>ขายทาวน์เฮ้าส์ 3 ชั้น หมู่บ้านพงษ์ศิริชัย 4</strong> (เพชรเกษม 81 ซอย 15) ทรัพย์น่าลงทุน บ้านสวยพร้อมอยู่ รีโนเวทใหม่ทั้งหลังด้วยวัสดุคุณภาพดี ปูกระเบื้องยางทั้งหลัง ให้ความรู้สึกอบอุ่นและทันสมัย
+                        </p>
+                        <p>
+                            <strong>พื้นที่ใช้สอยกว้างขวาง:</strong> หน้ากว้าง 5.5 เมตร ลึก 19 เมตร พื้นที่ใช้สอยรวมกว่า 190 ตารางเมตร ฟังก์ชันครบครันถึง 5 ห้องนอน 3 ห้องน้ำ 1 ห้องโถง และ 1 ห้องครัวใหญ่ เหมาะสำหรับครอบครัวใหญ่
+                        </p>
+                        <p class="text-gold-400 text-lg font-serif">
+                            <em>"ผ่อนสบายล้านละ 2,xxx บาท สำหรับแบงค์ของรัฐ ฟรีทุกค่าใช้จ่ายวันโอน!"</em>
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mt-4 text-gray-300">
+                            <li>เนื้อที่ 17 ตารางวา (หน้าบ้านหันทิศตะวันออกเฉียงเหนือ รับทรัพย์)</li>
+                            <li>แถมฟรี! ปั๊มน้ำ, เหล็กดัด, มุ้งลวด</li>
+                            <li>ตกแต่งครัว Built-in พร้อมใช้งาน</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Map Location -->
+                <div>
+                     <h3 class="font-serif text-2xl text-white mb-6 border-l-4 border-gold-400 pl-4">Location</h3>
+                     <p class="text-gray-400 text-sm mb-4"><i class="fa-solid fa-map-pin text-gold-400 mr-2"></i> ถนนเพชรเกษม 81 ซอย 15 หนองแขม กรุงเทพฯ</p>
+                     <div class="w-full h-64 bg-navy-800 rounded-sm overflow-hidden border border-white/10">
+                         <!-- Map centered roughly on Phetkasem 81 -->
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.016335359463!2d100.34757131483015!3d13.693441990385317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2961e5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sNong%20Khaem%2C%20Bangkok!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%); opacity: 0.6;" allowfullscreen="" loading="lazy"></iframe>
+                     </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Sticky Contact Form (1/3) -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-36 bg-navy-950 border border-gold-400/30 p-8 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gold-400/10 rounded-bl-full"></div>
+                    
+                    <h4 class="font-serif text-2xl text-white mb-2">2.XX MB</h4>
+                    <p class="text-gold-400 text-sm mb-6 font-light">ผ่อนเริ่มต้นเพียง 2,xxx / ล้าน</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 border border-gold-400 flex items-center justify-center mr-3 text-gold-400">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gold-400 uppercase">Contact Agent</p>
+                                <p class="text-lg font-serif">คุณนิน (Khun Nin)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-solid fa-phone text-gold-400 w-8 text-center mr-2"></i>
+                            <span>082-485 5092, 064-695 9417</span>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-brands fa-line text-gold-400 w-8 text-center mr-2"></i>
+                            <span>Line: chanuthslee</span>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-brands fa-tiktok text-gold-400 w-8 text-center mr-2"></i>
+                            <span>NinniraRealAsset</span>
+                        </div>
+                        <div class="flex items-center text-gray-300">
+                            <i class="fa-brands fa-facebook text-gold-400 w-8 text-center mr-2"></i>
+                            <span>Nin_Chanuthsinin</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://line.me/ti/p/~chanuthslee" target="_blank" class="btn-gold w-full py-3 text-sm font-bold uppercase tracking-widest text-white block text-center mb-3">
+                        <i class="fa-brands fa-line mr-2"></i> Add Line
+                    </a>
+                    <a href="#" class="border border-white/20 hover:border-white w-full py-3 text-sm font-bold uppercase tracking-widest text-white block text-center transition-colors">
+                        <i class="fa-solid fa-phone mr-2"></i> Call Now
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- NEW SECTION: Full Project Gallery (15 Photos Grid) -->
+    <section class="py-16 bg-navy-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8">
+                <h3 class="font-serif text-2xl text-white border-l-4 border-gold-400 pl-4">Full Gallery (15 Photos)</h3>
+                <p class="text-gray-500 text-xs mt-2 md:mt-0 italic">ภาพถ่ายจริงจากสถานที่ (Renovated 100%)</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px]">
+                
+                <!-- 1. Facade -->
+                <div class="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer">
+                    <img 
+                        src="https://scontent.fbkk8-4.fna.fbcdn.net/v/t39.30808-6/548865727_1460618425354895_3250384609797051798_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFlNJ9khNcaVRFGMrzqOrdpEdulPQ1WnEIR26U9DVacQlWrinD_5eH34tWIwYgIFc7_f8BZabthOX39-g2Dwct8&_nc_ohc=TYGGYrSC3y0Q7kNvwGVgSAu&_nc_oc=AdnMmrH6kM5ZSmbddwR0PBLFGx6sMOLUBaAN9i5QEdgX_QrAWGKkYrX2P1HaWGL3hSL53K07UUJxkPQG1-E8aftj&_nc_zt=23&_nc_ht=scontent.fbkk8-4.fna&_nc_gid=cznReBcwzG0irO4CYx4I6A&oh=00_AfgHAujQjQ838ZfrgMEiwamDm9TJDEPGbjyIO1mJ0c8gAg&oe=692A30D5" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Front View"
+                        data-lightbox-src="https://scontent.fbkk8-4.fna.fbcdn.net/v/t39.30808-6/548865727_1460618425354895_3250384609797051798_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFlNJ9khNcaVRFGMrzqOrdpEdulPQ1WnEIR26U9DVacQlWrinD_5eH34tWIwYgIFc7_f8BZabthOX39-g2Dwct8&_nc_ohc=TYGGYrSC3y0Q7kNvwGVgSAu&_nc_oc=AdnMmrH6kM5ZSmbddwR0PBLFGx6sMOLUBaAN9i5QEdgX_QrAWGKkYrX2P1HaWGL3hSL53K07UUJxkPQG1-E8aftj&_nc_zt=23&_nc_ht=scontent.fbkk8-4.fna&_nc_gid=cznReBcwzG0irO4CYx4I6A&oh=00_AfgHAujQjQ838ZfrgMEiwamDm9TJDEPGbjyIO1mJ0c8gAg&oe=692A30D5"
+                    >
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
+                </div>
+
+                <!-- 2. Living Room -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                    <img 
+                        src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t39.30808-6/547572390_1460618495354888_8250315822053205523_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFo83vPVr4HeMYcH3H6qKkNRwaT2MPFGilHBpPYw8UaKdx2XgQ6S69YX7UoRtKub2J3aftwwFvyCEuQ-1a-Mvrq&_nc_ohc=Xbk3nW0vPIQQ7kNvwHAUhFB&_nc_oc=AdmCCrcnZN5yLXb2xf6bgog_hwhDwNVDG7n8UnITyVPqf3FhCDBhYL4wj-5yDDc2Ce-dS4qZRQmAMd_rveILisCq&_nc_zt=23&_nc_ht=scontent.fbkk12-4.fna&_nc_gid=VwvQNY6b9UAiXnKZ2WspLQ&oh=00_AfjLItSsw8F8sq5rnxRtvM3H9aI8EMMZhfbIprWfcNORVA&oe=692A2D56" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Living"
+                        data-lightbox-src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t39.30808-6/547572390_1460618495354888_8250315822053205523_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFo83vPVr4HeMYcH3H6qKkNRwaT2MPFGilHBpPYw8UaKdx2XgQ6S69YX7UoRtKub2J3aftwwFvyCEuQ-1a-Mvrq&_nc_ohc=Xbk3nW0vPIQQ7kNvwHAUhFB&_nc_oc=AdmCCrcnZN5yLXb2xf6bgog_hwhDwNVDG7n8UnITyVPqf3FhCDBhYL4wj-5yDDc2Ce-dS4qZRQmAMd_rveILisCq&_nc_zt=23&_nc_ht=scontent.fbkk12-4.fna&_nc_gid=VwvQNY6b9UAiXnKZ2WspLQ&oh=00_AfjLItSsw8F8sq5rnxRtvM3H9aI8EMMZhfbIprWfcNORVA&oe=692A2D56"
+                    >
+                </div>
+                
+                <!-- 3. Hallway -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk8-4.fna.fbcdn.net/v/t39.30808-6/547376541_1460618528688218_1486907904912355750_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG6gyXLDk3hMNtcmhuUYznaTWOKrLOW_pBNY4qss5b-kKhCynTQB5CDaWntvXCdhpratK66s7jRwgf3CEDRDyg3&_nc_ohc=UlMNGMPzIE4Q7kNvwFQ2_iW&_nc_oc=AdlFenzXfvWSCql-o2u9KNhWtWQx5_Dm-vLoeqDtpsVIzyDRiVCmMf8KA1VhjHuihx0meL0duGtVSOTvIaWPHMYb&_nc_zt=23&_nc_ht=scontent.fbkk8-4.fna&_nc_gid=2NQ04rKv_WZDwR29jjUBgw&oh=00_AfjPJ_NKBD0PWjWNinlzzw73Tb5aVQFw8fBxvpDDiJrNCQ&oe=692A6478" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Kitchen"
+                        data-lightbox-src="https://scontent.fbkk8-4.fna.fbcdn.net/v/t39.30808-6/547376541_1460618528688218_1486907904912355750_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG6gyXLDk3hMNtcmhuUYznaTWOKrLOW_pBNY4qss5b-kKhCynTQB5CDaWntvXCdhpratK66s7jRwgf3CEDRDyg3&_nc_ohc=UlMNGMPzIE4Q7kNvwFQ2_iW&_nc_oc=AdlFenzXfvWSCql-o2u9KNhWtWQx5_Dm-vLoeqDtpsVIzyDRiVCmMf8KA1VhjHuihx0meL0duGtVSOTvIaWPHMYb&_nc_zt=23&_nc_ht=scontent.fbkk8-4.fna&_nc_gid=2NQ04rKv_WZDwR29jjUBgw&oh=00_AfjPJ_NKBD0PWjWNinlzzw73Tb5aVQFw8fBxvpDDiJrNCQ&oe=692A6478"
+                    >
+                </div>
+
+                <!-- 4. Kitchen (Built-in) -->
+                <div class="col-span-2 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                    <img 
+                        src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/549540758_1460618525354885_1223424128954411518_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHPKEgvbIDIIms4x-hzBWonfrqwqqvd9hR-urCqq932FDf_2cKonK8bGJN86LbGKzXOe3GD3CTUzCxqi82vImXZ&_nc_ohc=BaGmN9NQPBkQ7kNvwGIRgdu&_nc_oc=AdnPNPKbWNLAVCXy4QYfkZdfgHBWu1z7S9zEJSyhkXAgvm9fYzagvtqRkPlsPnV_0zoZ1tVQSN4jI28hETLnYTqC&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=HJJqwua8k0g6Y3JU-ep_9Q&oh=00_Afi2yUsOxT1qKvCq8pnBuk_GzpU_UidCfl7fMWG5Fc7WwA&oe=692A651D" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Kitchen Wide"
+                        data-lightbox-src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/549540758_1460618525354885_1223424128954411518_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHPKEgvbIDIIms4x-hzBWonfrqwqqvd9hR-urCqq932FDf_2cKonK8bGJN86LbGKzXOe3GD3CTUzCxqi82vImXZ&_nc_ohc=BaGmN9NQPBkQ7kNvwGIRgdu&_nc_oc=AdnPNPKbWNLAVCXy4QYfkZdfgHBWu1z7S9zEJSyhkXAgvm9fYzagvtqRkPlsPnV_0zoZ1tVQSN4jI28hETLnYTqC&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=HJJqwua8k0g6Y3JU-ep_9Q&oh=00_Afi2yUsOxT1qKvCq8pnBuk_GzpU_UidCfl7fMWG5Fc7WwA&oe=692A651D"
+                    >
+                    <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 pointer-events-none">Built-in Kitchen</div>
+                </div>
+
+                <!-- 5. Bedroom 1 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/549656162_1460618635354874_7831586668017296258_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEw4CKNheJ-nlo1oJ9viZm4CZZjfMirCq0JlmN8yKsKrSoeXYHNZu_rKOnUG0js9wNWZuXz1kG2v5SBwb-kegxO&_nc_ohc=aE7NTnl_iJUQ7kNvwHG7VXM&_nc_oc=AdkSLdOvQFJsJ9jcrFXK6Max46Ye6KluoZ85EDaHCbzg6RpNEHfdNQWJe33itWtgS_JtC845q2FdwnDxZ8JVQCA9&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=ycZ77AcLAFxfXAjAlarfJQ&oh=00_AfhYVc3nwAk4DMkn-oVIlRqCqoihXfO7giSftn7dk9awbA&oe=692A62FA" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bed 1"
+                        data-lightbox-src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/549656162_1460618635354874_7831586668017296258_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEw4CKNheJ-nlo1oJ9viZm4CZZjfMirCq0JlmN8yKsKrSoeXYHNZu_rKOnUG0js9wNWZuXz1kG2v5SBwb-kegxO&_nc_ohc=aE7NTnl_iJUQ7kNvwHG7VXM&_nc_oc=AdkSLdOvQFJsJ9jcrFXK6Max46Ye6KluoZ85EDaHCbzg6RpNEHfdNQWJe33itWtgS_JtC845q2FdwnDxZ8JVQCA9&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=ycZ77AcLAFxfXAjAlarfJQ&oh=00_AfhYVc3nwAk4DMkn-oVIlRqCqoihXfO7giSftn7dk9awbA&oe=692A62FA"
+                    >
+                </div>
+                
+                <!-- 6. Bedroom 2 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk9-2.fna.fbcdn.net/v/t39.30808-6/549034080_1460618695354868_6058161335405318914_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEaXNiWxxbkq6pfgrZgrF4n94LUmoBQSRL3gtSagFBJEh9O-lu7Ff045g7gsrUtXBkn83oannbMvaV6OwrwOHZD&_nc_ohc=dNSsD80lwR0Q7kNvwHDTNDH&_nc_oc=AdmMwHjn90lIt5czgKJHQwzb8vFs42JuF_AIQUGsO9RSqaJTpBbu4jXD6srBTBuuRXDglZuOgKiJWUDPL-NoUkuh&_nc_zt=23&_nc_ht=scontent.fbkk9-2.fna&_nc_gid=exZGcTlGo9vfat3-l8QAxQ&oh=00_Afgw2HefzeRtZTaERTUwbJCDpsLsHB-NcBi3_Y35MDsDSA&oe=692A407E" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bed 2"
+                        data-lightbox-src="https://scontent.fbkk9-2.fna.fbcdn.net/v/t39.30808-6/549034080_1460618695354868_6058161335405318914_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEaXNiWxxbkq6pfgrZgrF4n94LUmoBQSRL3gtSagFBJEh9O-lu7Ff045g7gsrUtXBkn83oannbMvaV6OwrwOHZD&_nc_ohc=dNSsD80lwR0Q7kNvwHDTNDH&_nc_oc=AdmMwHjn90lIt5czgKJHQwzb8vFs42JuF_AIQUGsO9RSqaJTpBbu4jXD6srBTBuuRXDglZuOgKiJWUDPL-NoUkuh&_nc_zt=23&_nc_ht=scontent.fbkk9-2.fna&_nc_gid=exZGcTlGo9vfat3-l8QAxQ&oh=00_Afgw2HefzeRtZTaERTUwbJCDpsLsHB-NcBi3_Y35MDsDSA&oe=692A407E"
+                    >
+                </div>
+
+                <!-- 7. Bathroom 1 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk13-3.fna.fbcdn.net/v/t39.30808-6/548399621_1460618698688201_3682783449912539680_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF5ALR5WGBIqUNFNvdcg9U4JDFEiPwLBTckMUSI_AsFNx1wjNHUB2C0hFXMzsPB2_cDMK9lGdAijwFDYONgxEbi&_nc_ohc=u4vkMgTuvtQQ7kNvwHx4BPb&_nc_oc=Adk5kxN94as2IromKRFAx_6HVKFrF-9-0RU9UopQrxZhgSe6ff3L2sw982KYrnN7d4GnTENwSNrG5QeSfBJNFojf&_nc_zt=23&_nc_ht=scontent.fbkk13-3.fna&_nc_gid=obvOqq0v0_fErewFTfoThA&oh=00_AfizIOy8i3YPu8RCoy_5klNYCg8N-FZlMY5qLzDKGWAFLA&oe=692A5D1F" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bath 1"
+                        data-lightbox-src="https://scontent.fbkk13-3.fna.fbcdn.net/v/t39.30808-6/548399621_1460618698688201_3682783449912539680_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF5ALR5WGBIqUNFNvdcg9U4JDFEiPwLBTckMUSI_AsFNx1wjNHUB2C0hFXMzsPB2_cDMK9lGdAijwFDYONgxEbi&_nc_ohc=u4vkMgTuvtQQ7kNvwHx4BPb&_nc_oc=Adk5kxN94as2IromKRFAx_6HVKFrF-9-0RU9UopQrxZhgSe6ff3L2sw982KYrnN7d4GnTENwSNrG5QeSfBJNFojf&_nc_zt=23&_nc_ht=scontent.fbkk13-3.fna&_nc_gid=obvOqq0v0_fErewFTfoThA&oh=00_AfizIOy8i3YPu8RCoy_5klNYCg8N-FZlMY5qLzDKGWAFLA&oe=692A5D1F"
+                    >
+                </div>
+
+                <!-- 8. Bathroom 2 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t39.30808-6/548812622_1460618758688195_5941125097631037374_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGxcJkzV1317KlnECA3VSLuX26d9MC2M65fbp30wLYzrgq9MWrIwaAGLo5dkst1MvwRzFF3NlM2Z5vLMMgHzrh-&_nc_ohc=qh-UvniIdK8Q7kNvwGHEkV-&_nc_oc=AdmaVW_39Qxg5ZczTy1SoqKPkAJZjQpfmO6a2b9PqyKEaJlg2fkAw3TCJ6P0dosSO3AeCR_viR1RDbsQPhuz8DQF&_nc_zt=23&_nc_ht=scontent.fbkk12-2.fna&_nc_gid=M3V-7D7CQreQhesqBTELtQ&oh=00_AfgGLD0-y2bzteTJ5xrJBJl-Cahac1sOLbQzwK5CpYPFOg&oe=692A5929" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bath 2"
+                        data-lightbox-src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t39.30808-6/548812622_1460618758688195_5941125097631037374_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGxcJkzV1317KlnECA3VSLuX26d9MC2M65fbp30wLYzrgq9MWrIwaAGLo5dkst1MvwRzFF3NlM2Z5vLMMgHzrh-&_nc_ohc=qh-UvniIdK8Q7kNvwGHEkV-&_nc_oc=AdmaVW_39Qxg5ZczTy1SoqKPkAJZjQpfmO6a2b9PqyKEaJlg2fkAw3TCJ6P0dosSO3AeCR_viR1RDbsQPhuz8DQF&_nc_zt=23&_nc_ht=scontent.fbkk12-2.fna&_nc_gid=M3V-7D7CQreQhesqBTELtQ&oh=00_AfgGLD0-y2bzteTJ5xrJBJl-Cahac1sOLbQzwK5CpYPFOg&oe=692A5929"
+                    >
+                </div>
+
+                <!-- 9. Bedroom 3 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk9-2.fna.fbcdn.net/v/t39.30808-6/548962554_1460618805354857_7070522279055304472_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFzaIyChpbaeYLNxFBzNJzR6D32SP1TTTXoPfZI_VNNNfSTUF8wKzdeBeZoC53I5TfNvQdDo-mjVp7n8kc3IfEL&_nc_ohc=aHAmktnkwVUQ7kNvwF4Zt_Z&_nc_oc=AdmfAyWoU1kTRuj1OTYa275ZRVyGh651C8LSN7hlU-5RjR1a9pbbD1YXET6Uk5tKQdfuo7pMY5eT3PBwTAXjYwDT&_nc_zt=23&_nc_ht=scontent.fbkk9-2.fna&_nc_gid=OqSR9Jau1IzcqI1Y4rnXKA&oh=00_AfhSr4NittCXOWSx1lUwLnexGn4a1btRef6C_4c2fxbV8Q&oe=692A3247" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bed 3"
+                        data-lightbox-src="https://scontent.fbkk9-2.fna.fbcdn.net/v/t39.30808-6/548962554_1460618805354857_7070522279055304472_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFzaIyChpbaeYLNxFBzNJzR6D32SP1TTTXoPfZI_VNNNfSTUF8wKzdeBeZoC53I5TfNvQdDo-mjVp7n8kc3IfEL&_nc_ohc=aHAmktnkwVUQ7kNvwF4Zt_Z&_nc_oc=AdmfAyWoU1kTRuj1OTYa275ZRVyGh651C8LSN7hlU-5RjR1a9pbbD1YXET6Uk5tKQdfuo7pMY5eT3PBwTAXjYwDT&_nc_zt=23&_nc_ht=scontent.fbkk9-2.fna&_nc_gid=OqSR9Jau1IzcqI1Y4rnXKA&oh=00_AfhSr4NittCXOWSx1lUwLnexGn4a1btRef6C_4c2fxbV8Q&oe=692A3247"
+                    >
+                </div>
+
+                <!-- 10. Bedroom 4 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk8-2.fna.fbcdn.net/v/t39.30808-6/549207676_1460618808688190_878639957585736923_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEFqybxU5ZehR1KRHVoP9PTObjDMozZDHw5uMMyjNkMfNgHF2djjpIbqrAlDbEBsFRVdFJkmH-CLf3QYMBcSwU4&_nc_ohc=NX5gRy9EkhAQ7kNvwEDlITq&_nc_oc=AdnfhpalX8j1ByuEsUWoMP0nPweJu7DQzl8ZPTC2HrUxduNCkV280SOSgFRR9h_cgttIrdrLF1QBXdoegEVLxrn0&_nc_zt=23&_nc_ht=scontent.fbkk8-2.fna&_nc_gid=KbkVcDThRS5ZuOraZ6rNVg&oh=00_Afg-XRw7zlkS0p5qr2tX_Dmi1_cInRNOtrG4faOIdeNCWw&oe=692A4895" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bed 4"
+                        data-lightbox-src="https://scontent.fbkk8-2.fna.fbcdn.net/v/t39.30808-6/549207676_1460618808688190_878639957585736923_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEFqybxU5ZehR1KRHVoP9PTObjDMozZDHw5uMMyjNkMfNgHF2djjpIbqrAlDbEBsFRVdFJkmH-CLf3QYMBcSwU4&_nc_ohc=NX5gRy9EkhAQ7kNvwEDlITq&_nc_oc=AdnfhpalX8j1ByuEsUWoMP0nPweJu7DQzl8ZPTC2HrUxduNCkV280SOSgFRR9h_cgttIrdrLF1QBXdoegEVLxrn0&_nc_zt=23&_nc_ht=scontent.fbkk8-2.fna&_nc_gid=KbkVcDThRS5ZuOraZ6rNVg&oh=00_Afg-XRw7zlkS0p5qr2tX_Dmi1_cInRNOtrG4faOIdeNCWw&oe=692A4895"
+                    >
+                </div>
+
+                <!-- 11. Bedroom 5 -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/548827782_1460618328688238_4236644866714103220_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEjhAOdZ4zkb79jekLhBVav-8a1gQ0STcf7xrWBDRJNx-9jkPXcqMUTp2ROlpRWB4e-uYMocjdfVajQOzyRhKEX&_nc_ohc=tx168EAVPJEQ7kNvwFsFxzv&_nc_oc=Adl_wqy3c7i9INo_fwGyn5gN5HuQa3iNxYurFphqRJUyYX2J1itsvpv_5ijF12POVSkzB-fP1A8fTKFbJBcVojtY&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=fzY3_qfkK7xHPBXq_4HQdQ&oh=00_AfjqsndtEwSZZQM9QAhaRbisMkU73BjopMFTNJjlywEHRw&oe=692A5DDD" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Bed 5"
+                        data-lightbox-src="https://scontent.fbkk12-5.fna.fbcdn.net/v/t39.30808-6/548827782_1460618328688238_4236644866714103220_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEjhAOdZ4zkb79jekLhBVav-8a1gQ0STcf7xrWBDRJNx-9jkPXcqMUTp2ROlpRWB4e-uYMocjdfVajQOzyRhKEX&_nc_ohc=tx168EAVPJEQ7kNvwFsFxzv&_nc_oc=Adl_wqy3c7i9INo_fwGyn5gN5HuQa3iNxYurFphqRJUyYX2J1itsvpv_5ijF12POVSkzB-fP1A8fTKFbJBcVojtY&_nc_zt=23&_nc_ht=scontent.fbkk12-5.fna&_nc_gid=fzY3_qfkK7xHPBXq_4HQdQ&oh=00_AfjqsndtEwSZZQM9QAhaRbisMkU73BjopMFTNJjlywEHRw&oe=692A5DDD"
+                    >
+                </div>
+                
+                 <!-- 12. Stairs/Hall -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/548185089_1460618302021574_6386341287790060485_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDbmTOR0rTgTzjVPpkFa_sc6Mu2En1Ipdzoy7YSfUilwHpxmlNPOTJWLbYIye8EMZIBOoP7-WvqXsko4EinZpK&_nc_ohc=d1IuL_WcgzIQ7kNvwHgzIww&_nc_oc=Adnf8aY95RD63CQy5JH8--ET7oA_SuY3fYVcg1xLWEwZ4V0yXCV9dfoIBTUvhEEXXor35A5iDlrLb7eT6KyRFAR1&_nc_zt=23&_nc_ht=scontent.fbkk13-2.fna&_nc_gid=HANNMIVToHhu83lmZG2KYA&oh=00_Afi4J4aKuP4xpUX4F6GO6y-9qndAoXO0aAOr17vqwmkRzg&oe=692A5619" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Stairs"
+                        data-lightbox-src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/548185089_1460618302021574_6386341287790060485_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDbmTOR0rTgTzjVPpkFa_sc6Mu2En1Ipdzoy7YSfUilwHpxmlNPOTJWLbYIye8EMZIBOoP7-WvqXsko4EinZpK&_nc_ohc=d1IuL_WcgzIQ7kNvwHgzIww&_nc_oc=Adnf8aY95RD63CQy5JH8--ET7oA_SuY3fYVcg1xLWEwZ4V0yXCV9dfoIBTUvhEEXXor35A5iDlrLb7eT6KyRFAR1&_nc_zt=23&_nc_ht=scontent.fbkk13-2.fna&_nc_gid=HANNMIVToHhu83lmZG2KYA&oh=00_Afi4J4aKuP4xpUX4F6GO6y-9qndAoXO0aAOr17vqwmkRzg&oe=692A5619"
+                    >
+                </div>
+
+                 <!-- 13. Detail -->
+                <div class="col-span-1 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer">
+                     <img 
+                        src="https://scontent.fbkk12-6.fna.fbcdn.net/v/t39.30808-6/548164995_1460618288688242_6245934913503672089_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHxHUK7NMrpiNwdxlXMY_VCIjOpC_BbkH4iM6kL8FuQfmXdt-azWlynOH8eZFeGthEKXAMcoLOhMvxMP75AUkNS&_nc_ohc=9tV9C-Gr0G8Q7kNvwEMaGMh&_nc_oc=Adlz8s1G5x9pDdigQfcGtLbFtkMbMRv0WWhywuADH7ysL473tPqWAmpI9LPNYnc4CdqDr0mlX7FdYzxi1YrrxH5B&_nc_zt=23&_nc_ht=scontent.fbkk12-6.fna&_nc_gid=mFTHX4sr_g2kfRVH9PIKNw&oh=00_Afg0XKA1xMkJDY7fAMolvkth0rWc_fIIrZa8ZHtY4sZo8g&oe=692A4CB2" 
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" 
+                        alt="Detail"
+                        data-lightbox-src="https://scontent.fbkk12-6.fna.fbcdn.net/v/t39.30808-6/548164995_1460618288688242_6245934913503672089_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHxHUK7NMrpiNwdxlXMY_VCIjOpC_BbkH4iM6kL8FuQfmXdt-azWlynOH8eZFeGthEKXAMcoLOhMvxMP75AUkNS&_nc_ohc=9tV9C-Gr0G8Q7kNvwEMaGMh&_nc_oc=Adlz8s1G5x9pDdigQfcGtLbFtkMbMRv0WWhywuADH7ysL473tPqWAmpI9LPNYnc4CdqDr0mlX7FdYzxi1YrrxH5B&_nc_zt=23&_nc_ht=scontent.fbkk12-6.fna&_nc_gid=mFTHX4sr_g2kfRVH9PIKNw&oh=00_Afg0XKA1xMkJDY7fAMolvkth0rWc_fIIrZa8ZHtY4sZo8g&oe=692A4CB2"
+                    >
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 z-[60] hidden items-center justify-center">
+        <!-- ปุ่มปิด -->
+        <button 
+            id="lightbox-close"
+            class="absolute top-4 right-4 text-white text-3xl md:text-4xl leading-none px-3 py-1 hover:text-gold-400 transition-colors"
+            aria-label="Close"
+        >
+            &times;
+        </button>
+
+        <!-- ปุ่ม Prev -->
+        <button 
+            id="lightbox-prev"
+            class="absolute left-4 md:left-8 text-white text-2xl md:text-3xl px-3 py-2 bg-black/40 rounded-full hover:bg-black/70 transition"
+            aria-label="Previous image"
+        >
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- รูปใหญ่ -->
+        <img 
+            id="lightbox-image"
+            src=""
+            alt="Preview"
+            class="max-h-[80vh] max-w-[90vw] object-contain shadow-2xl border border-white/10"
+        >
+
+        <!-- ปุ่ม Next -->
+        <button 
+            id="lightbox-next"
+            class="absolute right-4 md:right-8 text-white text-2xl md:text-3xl px-3 py-2 bg-black/40 rounded-full hover:bg-black/70 transition"
+            aria-label="Next image"
+        >
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+        <!-- Footer -->
+    <footer id="contact" class="bg-black py-16 border-t-2 border-gold-600 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+                <!-- Column 1: Logo -->
+                <div class="md:col-span-1">
+                <div class="flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="/c6c0ab1a-4c8d-4e19-9d69-ff5815179e68-removebg-preview.png" alt="THE REALITY Logo" class="h-14 md:h-16 w-auto object-contain">
+                                        <div class="flex flex-col">
+                        <span class="font-serif text-xl md:text-2xl tracking-widest text-gold-gradient font-normal">THE REALITY</span>
+                        <span class="text-[0.6rem] md:text-xs tracking-[0.2em] text-white uppercase">Asset Plus Agent Co.,Ltd.</span>
+                    </div>
+                </div>
+                    <!-- <p class="text-gray-500 text-xs font-light leading-relaxed mb-6">
+                        The Reality of Luxury Living. <br>
+                        ที่สุดแห่งการอยู่อาศัยใจกลางพัทยา
+                    </p> -->
+                    <br>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors"><i class="fa-brands fa-line text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Links -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest mb-6 font-serif text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-xs font-light">
+                        <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                        <li><a href="#story" class="hover:text-gold-400 transition-colors">Project Story</a></li>
+                        <li><a href="#features" class="hover:text-gold-400 transition-colors">Facilities</a></li>
+                        <li><a href="#gallery" class="hover:text-gold-400 transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h4 class="text-white uppercase tracking-widest mb-6 font-serif text-sm">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400 text-xs font-light">
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-phone text-gold-400 w-4 mr-2"></i> 
+                            <span>02-123-4567</span>
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-envelope text-gold-400 w-4 mr-2"></i> 
+                            <span>sales@assetplus.com</span>
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center">
+                            <i class="fa-solid fa-map-pin text-gold-400 w-4 mr-2"></i> 
+                            <span>Pattaya, Thailand</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Map -->
+                <div class="w-full h-40 bg-navy-800 rounded-sm overflow-hidden relative border border-white/10">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124424.80596817257!2d100.86217484190973!3d12.951632281949012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102959244ba8899%3A0x37e33b843b32375d!2sPattaya%20City%2C%20Bang%20Lamung%20District%2C%20Chon%20Buri!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%); opacity: 0.6;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-gray-600 text-[10px] uppercase tracking-wider">&copy; 2025 Asset Plus Agent Co.,Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const lightbox      = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const btnClose      = document.getElementById('lightbox-close');
+        const btnPrev       = document.getElementById('lightbox-prev');
+        const btnNext       = document.getElementById('lightbox-next');
+
+        const items = Array.from(document.querySelectorAll('[data-lightbox-src]'));
+        let currentIndex = 0;
+
+        function showImage(index) {
+            if (!items.length) return;
+            currentIndex = (index + items.length) % items.length; // loop รอบ
+            const src  = items[currentIndex].getAttribute('data-lightbox-src');
+            const alt  = items[currentIndex].getAttribute('alt') || 'Preview';
+            lightboxImage.src = src;
+            lightboxImage.alt = alt;
+        }
+
+        function openLightbox(index) {
+            showImage(index);
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+
+        // คลิกที่รูป -> เปิด lightbox
+        items.forEach((el, index) => {
+            el.classList.add('cursor-pointer');
+            el.addEventListener('click', () => openLightbox(index));
+        });
+
+        // ปิด lightbox
+        btnClose.addEventListener('click', closeLightbox);
+
+        // ปุ่ม prev / next
+        btnPrev.addEventListener('click', () => showImage(currentIndex - 1));
+        btnNext.addEventListener('click', () => showImage(currentIndex + 1));
+
+        // คลิกพื้นหลังมืดให้ปิด
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // คีย์บอร์ด: Esc, ArrowLeft, ArrowRight
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        });
+    });
+    </script>
+
+</body>
+</html>
